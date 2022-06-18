@@ -1,21 +1,55 @@
-<div class="contact">
-  <div class="title-contact">Contact Form</div>
-  <p></p>
-  <form action="#">
-    <div class="input-contact">
-      <label for="nama">Nama Anda</label>
-      <input type="text" placeholder="Enter your name" />
-    </div>
-    <div class="input-contact">
-      <label for="email">Email</label>
-      <input type="text" placeholder="Enter your email" />
-    </div>
-    <div class="input-contact">
-      <label for="pesan">Pesan</label>
-      <textarea placeholder="Enter your message"></textarea>
-    </div>
-    <div class="button">
-      <input type="button" value="Send" />
-    </div>
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Web Development</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <table class="table-contact" cellspacing="20px">
+      <tr>
+        <td colspan="2" align="center">
+          <h3 class="title-contact">Contact Form</h3>
+        </td>
+      </tr>
+      <form action="#">
+        <tr>
+          <td>
+            <label for="nama"><p>Nama anda :</p> </label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              class="input-contact"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email" class="label-contact">Email : </label>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="input-contact"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="pesan" class="label-contact">Pesan : </label>
+            <textarea
+              placeholder="Enter your message"
+              class="input-contact area"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" value="Send" class="button-contact" />
+          </td>
+        </tr>
+      </form>
+    </table>
+  </body>
+</html>
