@@ -22,6 +22,8 @@
               type="text"
               placeholder="Enter your name"
               class="input-contact"
+              id="name"
+              required
             />
           </td>
         </tr>
@@ -29,9 +31,11 @@
           <td>
             <label for="email" class="label-contact">Email : </label>
             <input
-              type="text"
+              type="email"
               placeholder="Enter your email"
               class="input-contact"
+              id="email"
+              required
             />
           </td>
         </tr>
@@ -41,15 +45,40 @@
             <textarea
               placeholder="Enter your message"
               class="input-contact area"
+              id="message"
+              required
             ></textarea>
           </td>
         </tr>
         <tr>
           <td>
-            <input type="button" value="Send" class="button-contact" />
+            <input
+              type="button"
+              class="button-contact"
+              id="button"
+              value="Send"
+            />
           </td>
         </tr>
       </form>
     </table>
+
+    <p id="result"></p>
+    <script>
+      const nama = document.getElementById("name");
+      const email = document.getElementById("email");
+      const pesan = document.getElementById("message");
+      const button = document.getElementById("button");
+      const result = document.getElementById("result");
+
+      button.addEventListener("click", () => {
+        let rNama = nama.value;
+        let rEmail = email.value;
+        let rPesan = pesan.value;
+        if (rNama !== "" && rEmail !== "" && rPesan !== "") {
+          result.innerHTML += `Halo ${rNama} Email anda ${rEmail} , pesan yang ingin anda sampaikan ${rPesan}`;
+        }
+      });
+    </script>
   </body>
 </html>
