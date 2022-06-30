@@ -1,0 +1,30 @@
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.openAndClose {
+  display: block;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+.wrapper {
+  padding: 0 20px;
+  max-width: 992px;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 576px;
+  }
+}

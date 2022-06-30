@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+    <title>Ujian TEFA Chapter 2</title>
+  </head>
+  <body>
+    <section id="form">
+      <div class="container wrapper">
+        <h2>Form Perekrutan Telkom</h2>
+        <form id="forms">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Nama Lengkap :
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputNama"
+              placeholder="Masukkan nama lengkap"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >No. Telepon :
+            </label>
+            <input type="number" class="form-control" id="inputTelepon" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email : </label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputEmail"
+              placeholder="Masukkan email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Pendidikan Terakhir :
+            </label>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="inputPendidikan"
+            >
+              <option selected>Masukkan Pendidikan Terakhir</option>
+              <option value="S1">S1</option>
+              <option value="S2">S2</option>
+              <option value="S3">S3</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Asal Universitas :
+            </label>
+            <input type="text" class="form-control" id="inputEmail" />
+          </div>
+
+          <div class="row g-2 align-items-center">
+            <div class="col me-2">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Bidang yang didaftarkan :
+                </label>
+                <input type="text" class="form-control" id="inputEmail" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Berapa lama dibidang tersebut :
+                </label>
+                <input type="number" class="form-control" id="inputEmail" />
+                <div id="noHelp" class="form-text"></div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="button"
+            type="submit"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade openPopup"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"></div>
+          <div class="modal-body">
+            <div id="result"></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!-- 
+    wajib : nama, no telp, email, pendidikan, asal universitas, sudah berapa lama bekerja yang didaftarkan (fe, be)
+    tidak wajib : background sekolah, sertifikat internasional, portfolio yg sudah dibuat
+    upload cv dokumen pdf size maks 500kb
+    if submit modal input
+
+ -->
