@@ -13,53 +13,70 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
+
     <title>Ujian TEFA Chapter 2</title>
   </head>
   <body>
+    <!-- Form -->
     <section id="form">
       <div class="container wrapper">
-        <h2>Form Perekrutan Telkom</h2>
-        <form id="forms">
+        <h2>Form Recruitment PT. Telkom</h2>
+        <p class="text-secondary">
+          Pendaftaran PT. Telkom untuk profesional expert digital, dengan
+          minimal lulusan S1 hingga S3
+          <br />
+          <span class="text-danger">* Wajib</span>
+        </p>
+
+        <form id="forms" enctype="multipart/form-data" novalidate>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Nama Lengkap :
+            <label for="inputNama" class="form-label required"
+              >Nama lengkap
             </label>
             <input
               type="text"
+              name="inputNama"
               class="form-control"
               id="inputNama"
-              placeholder="Masukkan nama lengkap"
+              placeholder="Masukkan nama lengkap kandidat"
             />
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >No. Telepon :
+            <label for="inputTelepon" class="form-label required"
+              >No. Telepon
             </label>
-            <input type="number" class="form-control" id="inputTelepon" />
+            <input
+              type="number"
+              name="inputTelepon"
+              class="form-control"
+              id="inputTelepon"
+              placeholder="Masukkan no. telp kandidat"
+            />
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email : </label>
+            <label for="inputEmail" class="form-label required">Email </label>
             <input
-              type="text"
+              type="email"
+              name="inputEmail"
               class="form-control"
               id="inputEmail"
-              placeholder="Masukkan email"
+              placeholder="Masukkan email kandidat"
             />
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Pendidikan Terakhir :
+            <label for="inputPeta" class="form-label required"
+              >Pendidikan Terakhir
             </label>
             <select
               class="form-select"
               aria-label="Default select example"
-              id="inputPendidikan"
+              id="inputPeta"
+              name="inputPeta"
             >
-              <option selected>Masukkan Pendidikan Terakhir</option>
+              <option selected>Masukkan Pendidikan Terakhir kandidat</option>
               <option value="S1">S1</option>
               <option value="S2">S2</option>
               <option value="S3">S3</option>
@@ -67,44 +84,119 @@
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Asal Universitas :
+            <label for="inputUniv" class="form-label required"
+              >Asal Universitas
             </label>
-            <input type="text" class="form-control" id="inputEmail" />
+            <input
+              type="text"
+              class="form-control"
+              name="inputUniv"
+              id="inputUniv"
+              placeholder="Masukkan Asal Universitas Kandidat"
+            />
           </div>
 
           <div class="row g-2 align-items-center">
             <div class="col me-2">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
-                  >Bidang yang didaftarkan :
+                <label for="inputBidang" class="form-label required"
+                  >Bidang yang didaftarkan
                 </label>
-                <input type="text" class="form-control" id="inputEmail" />
+                <input
+                  type="text"
+                  name="inputBidang"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Masukkan bidang yang ingin didaftarkan"
+                />
               </div>
             </div>
             <div class="col">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
-                  >Berapa lama dibidang tersebut :
+                <label for="inputLamaBidang" class="form-label required"
+                  >Berapa lama dibidang tersebut
+                  <span class="fst-italic">(tahun)</span>
                 </label>
-                <input type="number" class="form-control" id="inputEmail" />
+                <input
+                  type="number"
+                  name="inputLamaBidang"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Masukkan lama pengalaman dibidang tersebut"
+                />
                 <div id="noHelp" class="form-text"></div>
               </div>
             </div>
           </div>
 
+          <div class="mb-3">
+            <label for="inputBackSekolah" class="form-label"
+              >Background Sekolah
+            </label>
+            <input
+              type="text"
+              name="inputBackSekolah"
+              class="form-control"
+              id="inputEmail"
+              placeholder="Masukkan background sekolah kandidat"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="inputSertifikat" class="form-label"
+              >Sertifikat Internasional
+              <span class="fst-italic">(.pdf file)</span>
+            </label>
+            <input
+              type="file"
+              name="inputSertifikat"
+              class="form-control"
+              id="inputSertifikat"
+              multiple="multiple"
+              accept=".pdf"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="inputPortfolio" class="form-label"
+              >Portfolio yang pernah dibuat
+            </label>
+            <input
+              type="text"
+              name="inputPortfolio"
+              class="form-control"
+              id="inputPortfolio"
+              placeholder="Masukkan Portfolio yang pernah dibuat"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="inputCv" class="form-label required"
+              >Upload CV Kandidat
+            </label>
+            <input
+              class="form-control"
+              type="file"
+              name="inputCv"
+              id="inputCv"
+              accept=".pdf"
+            />
+          </div>
+
           <button
+            disabled
             id="button"
             type="submit"
-            class="btn btn-primary"
+            class="btn btn-primary px-4 mt-2"
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
           >
-            Submit
+            Kirim
           </button>
         </form>
       </div>
     </section>
+    <!-- End Form -->
 
     <!-- Modal -->
     <div
@@ -117,7 +209,7 @@
     >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header"></div>
+          <div class="modal-header fw-normal h5">Konfirmasi Data</div>
           <div class="modal-body">
             <div id="result"></div>
           </div>
@@ -127,14 +219,23 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              Kembali
             </button>
-            <button type="button" class="btn btn-primary">Understood</button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              onclick="Swal.fire('Data Terkirim', 'Terimakasih Telah mendaftar','success')"
+            >
+              Benar
+            </button>
           </div>
         </div>
       </div>
     </div>
     <!-- End Modal -->
+    <script src="main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
