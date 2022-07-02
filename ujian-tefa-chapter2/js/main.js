@@ -112,7 +112,7 @@ const validation = () => {
 
   // phone number validation
   const validPhoneNumber = /^08[1-9][0-9]{7,10}$/;
-  if (phoneNumber.value != "" && !phoneNumber.match(validPhoneNumber)) {
+  if (forms[1].value != "" && !phoneNumber.match(validPhoneNumber)) {
     alert("No. Telepon tidak valid");
     return false;
   }
