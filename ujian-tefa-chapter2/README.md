@@ -30,12 +30,16 @@ Form pendaftaran kandidat PT. Telkom untuk profesional expert digital, dengan mi
 - Bootstrap
 - SweetAlert2
 
+## Link
+
 [Link Website](https://kkafi09.github.io/tefa-dbt-project/ujian-tefa-chapter2/index.html)
+
+[Link Documentation](./documentation/Kelompok4_Documentation%20Tugas%20Besar%20Chapter%202.pdf)
 
 ## Our Temas
 
 - Kafi -> Develop Web
-- Zhidane -> Documentation (Google Document)
+- Zidane -> Documentation (Google Document)
 - Gizel -> Desain Wireframe and Mockup
 - Yasmin -> Desain Wireframe and Mockup
 
