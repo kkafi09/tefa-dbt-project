@@ -1,3 +1,4 @@
+// get element in html
 const button = document.getElementById("button");
 const result = document.getElementById("result");
 const forms = document.getElementById("forms");
@@ -57,7 +58,7 @@ forms.addEventListener("submit", (e) => {
                       <td>2.</td>
                       <td>Sertifikat Internasional</td>
                       <td>${
-                        forms[8].value != "" ? forms[8].value : "Tidak ada"
+                        forms[8].name != "" ? forms[8].name : "Tidak ada"
                       }</td>
                     </tr>
                     <tr>
