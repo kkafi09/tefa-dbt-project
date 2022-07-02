@@ -8,6 +8,20 @@ Form pendaftaran kandidat PT. Telkom untuk profesional expert digital, dengan mi
 - Validasi untuk No. Telepon
 - Validasi untuk pembatasan upload CV sampai 500 kB
 
+## Documentation
+
+- Page form
+
+![form-page](./documentation/form.png)
+
+- Page Confirm
+
+![confirm-page](./documentation/confirm.png)
+
+- Page Success
+
+![page-success](./documentation/success.png)
+
 ## Technology
 
 - HTML
