@@ -3,7 +3,6 @@ const button = document.getElementById("button");
 const result = document.getElementById("result");
 const forms = document.getElementById("forms");
 const openPopup = document.querySelector(".openPopup");
-
 let message = [];
 
 // form validation
@@ -84,6 +83,9 @@ forms.addEventListener("submit", (e) => {
 
 // check if all input already exist and add attribute id for modal popup
 forms.addEventListener("change", () => {
+  // normalization phone number
+
+  // open popup modal and remove attribute disable
   if (
     validation() &&
     forms[0].value != "" &&
@@ -99,11 +101,19 @@ forms.addEventListener("change", () => {
 // all function for validation
 const validation = () => {
   message = [];
+  let phoneNumber = normalizationPhoneNumber(forms[1].value);
 
   // email validation
   const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (!forms[2].value.match(validEmail)) {
+  if (forms[2].value != "" && !forms[2].value.match(validEmail)) {
     alert("Email tidak valid");
+    return false;
+  }
+
+  // phone number validation
+  const validPhoneNumber = /^08[1-9][0-9]{7,10}$/;
+  if (phoneNumber.value != "" && !phoneNumber.match(validPhoneNumber)) {
+    alert("No. Telepon tidak valid");
     return false;
   }
 
@@ -117,3 +127,14 @@ const validation = () => {
 
   return true;
 };
+
+// normalization phone number id from (+62....) to (085...)
+function normalizationPhoneNumber(phone) {
+  phone = String(phone).trim();
+  if (phone.startsWith("+62")) {
+    phone = "0" + phone.slice(3);
+  } else if (phone.startsWith("62")) {
+    phone = "0" + phone.slice(2);
+  }
+  return phone.replace(/[- .]/g, "");
+}
