@@ -58,7 +58,9 @@ forms.addEventListener("submit", (e) => {
                       <td>2.</td>
                       <td>Sertifikat Internasional</td>
                       <td>${
-                        forms[8].name != "" ? forms[8].name : "Tidak ada"
+                        forms[8].files.length != ""
+                          ? forms[8].files.length
+                          : "Tidak ada"
                       }</td>
                     </tr>
                     <tr>
@@ -98,6 +100,14 @@ forms.addEventListener("change", () => {
 const validation = () => {
   message = [];
 
+  // email validation
+  const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (!forms[2].value.match(validEmail)) {
+    alert("Email tidak valid");
+    return false;
+  }
+
+  // cv input validation
   if (forms[forms.length - 2].files[0].size > 500000) {
     message.push("File tidak boleh lebih dari 500 KB");
     alert(message);
