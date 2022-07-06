@@ -8,7 +8,7 @@ let message = [];
 // form validation
 forms.addEventListener("submit", (e) => {
   if (message.length === 0) {
-    result.innerHTML = `<div class="row g-2">
+    result.innerHTML = `<div class="row row-cols-2 g-2">
                 <div class="col">
                   <div>
                     <span class="fw-bold">Nama lengkap</span>
@@ -37,6 +37,7 @@ forms.addEventListener("submit", (e) => {
                     <p>${forms[5].value} (${forms[6].value} Tahun)</p>
                   </div>
                 </div>
+                <br>
                 <table class="col table table-bordered">
                   <thead>
                     <tr>
@@ -56,18 +57,12 @@ forms.addEventListener("submit", (e) => {
                     <tr>
                       <td>2.</td>
                       <td>Sertifikat Internasional</td>
-                      <td>${
-                        forms[8].files.length != ""
-                          ? forms[8].files.length
-                          : "Tidak ada"
-                      }</td>
+                      <td>${forms[8].files.length ?? "Tidak ada"}</td>
                     </tr>
                     <tr>
                       <td>3.</td>
                       <td>Portfolio yang pernah dibuat</td>
-                      <td>${
-                        forms[9].value != "" ? forms[9].value : "Tidak ada"
-                      }</td>
+                      <td>${forms[9].value ? forms[9].value : "Tidak ada"}</td>
                     </tr>
                     <tr>
                       <td>4.</td>
@@ -107,6 +102,7 @@ const validation = () => {
   const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (forms[2].value != "" && !forms[2].value.match(validEmail)) {
     alert("Email tidak valid");
+    forms[2].value = "";
     return false;
   }
 
@@ -114,6 +110,14 @@ const validation = () => {
   const validPhoneNumber = /^08[1-9][0-9]{7,10}$/;
   if (forms[1].value != "" && !phoneNumber.match(validPhoneNumber)) {
     alert("No. Telepon tidak valid");
+    forms[1].value = "";
+    return false;
+  }
+
+  // pengalaman
+  if (forms[6].value != "" && forms[6].value < 5) {
+    alert("Pengalaman minimaln 5 tahun");
+    forms[6].value = "";
     return false;
   }
 
